@@ -17,6 +17,8 @@
       ./packages.nix
       ./bluetooth.nix
 
+      # NVIDIA
+      ./nvidia.nix
 
       ./editors.nix
     ];

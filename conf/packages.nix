@@ -7,11 +7,18 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+  };
+
   environment.systemPackages = with pkgs; [
 	  btop
 	  neovim
 	  wireguard-tools
 	  git
+    kitty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
