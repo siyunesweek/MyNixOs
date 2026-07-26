@@ -55,8 +55,6 @@
       swaylock
       swayidle
       swaybg
-      wmenu
-      foot
       mako
       adwaita-icon-theme
       gnome-themes-extra
