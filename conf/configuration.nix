@@ -4,13 +4,13 @@
   imports =
     [ 
       # Homemanager
-	<home-manager/nixos>
+      <home-manager/nixos>
 
       # Basic cofiguration
       ./hardware-configuration.nix
       ./boot.nix
       ./audio.nix
-      ./desktop.nix
+      # ./desktop.nix
       ./locale.nix
       ./users.nix
       ./network.nix
@@ -21,6 +21,10 @@
       ./nvidia.nix
 
       ./editors.nix
+
+      # Sway
+      ./sway.nix
+      ./sconfig.nix
     ];
 
   # This value determines the NixOS release from which the default

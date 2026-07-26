@@ -13,14 +13,14 @@
       '';
     };
 
-    programs.helix = {
-      enable = true;
-      settings = {
-        editor.indent = {
-          unit = "  ";
-          tab-width = 2;
-        };
-      };
-    };
+    # programs.helix = {
+    #   enable = true;
+    #   settings = {
+    #     editor.indent = {
+    #       unit = "  ";
+    #       tab-width = 2;
+    #     };
+    #   };
+    # };
   };
 }
