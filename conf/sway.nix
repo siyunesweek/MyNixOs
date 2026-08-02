@@ -126,6 +126,7 @@ in
     exec mako
     exec dbus-update-activation-environment --all
     exec vicinae server
+    exec noctalia
 
     ### Keybindings
     bindsym $mod+Return exec $term
@@ -209,15 +210,15 @@ in
     bindsym Print exec grimshot copy area
 
     ### Bar
-    bar {
-        position top
-        font pango:JetBrainsMono Nerd Font 10
-        status_command ${statusScript}
-        colors {
-            statusline #ffffff
-            background #323232aa
-        }
-    }
+    # bar {
+    #     position top
+    #     font pango:JetBrainsMono Nerd Font 10
+    #     status_command ${statusScript}
+    #     colors {
+    #         statusline #ffffff
+    #         background #323232aa
+    #     }
+    # }
   '';
 
   # Para que se copie en .config/sway

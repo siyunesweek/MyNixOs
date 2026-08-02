@@ -34,6 +34,7 @@
     kitty
 
     # Sway
+    noctalia
     wl-clipboard
     grim
     slurp
