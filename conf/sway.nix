@@ -38,7 +38,7 @@ let
       # --- Volumen ---
       vraw=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null)
       case "$vraw" in
-        *MUTED*) vol="MUDO" ;;
+        *MUTED*) vol="MUTE" ;;
         *)       vol=$(echo "$vraw" | awk '{ printf "%.0f%%", $2 * 100 }') ;;
       esac
       [ -n "$vol" ] || vol="?"

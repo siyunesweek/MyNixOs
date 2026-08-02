@@ -3,9 +3,6 @@
 {
   imports =
     [ 
-      # Homemanager
-      <home-manager/nixos>
-
       # Basic cofiguration
       ./hardware-configuration.nix
       ./boot.nix

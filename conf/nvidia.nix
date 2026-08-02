@@ -16,7 +16,8 @@
     open = true;              # kernel module open-source, recomendado para RTX 50-series (Blackwell)
     nvidiaSettings = true;
     nvidiaPersistenced = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    # package = config.boot.kernelPackages.nvidiaPackages.latest;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
       offload = {
@@ -34,8 +35,9 @@
 
   boot.initrd.kernelModules = [ "amdgpu" ];
 
-  services.asusd = {
-    enable = true;
-    enableUserService = true;
-  };
+  # services.asusd = {
+  #   enable = true;
+  #   enableUserService = true;
+  # };
+  services.asusd.enable = true;
 }
