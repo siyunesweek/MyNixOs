@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
-
+let
+  unstable = import <nixos-unstable> { config = config.nixpkgs.config; };
+in
 {
-
   # Install brillo
   hardware.brillo.enable = true;
   users.users.agamotto.extraGroups = [ "video" ];
@@ -19,22 +20,25 @@
   };
 
   environment.systemPackages = with pkgs; [
-
     # file manager
     nautilus
 
-	  btop
+    flameshot
+
+    btop
+
+    #chat
+    telegram-desktop
 
     # editors
-	  neovim
+    neovim
     helix
 
-	  wireguard-tools
-	  git
+    wireguard-tools
+    git
     kitty
 
     # Sway
-    noctalia
     wl-clipboard
     grim
     slurp
@@ -42,8 +46,11 @@
     playerctl
     pavucontrol
     mako
-    pciutils    
+    pciutils
     vicinae
+
+  ] ++ [
+    unstable.noctalia
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -53,5 +60,4 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
 }

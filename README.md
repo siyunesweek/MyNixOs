@@ -14,3 +14,8 @@ sudo nix-collect-garbage -d
 
 # Regenerar las entradas del menú de arranque
 sudo nixos-rebuild boot
+
+# Para ahorro de energia 
+asusctl profile -l          # lista perfiles: Balanced, Performance, Quiet
+asusctl profile -P Quiet    # cambia a modo silencioso/ahorro
+asusctl profile -p          # muestra el perfil activo

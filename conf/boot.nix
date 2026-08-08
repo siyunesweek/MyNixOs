@@ -20,5 +20,6 @@
   nix.settings.auto-optimise-store = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_6_12;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_6_12;
 }

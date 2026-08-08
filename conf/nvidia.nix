@@ -7,7 +7,13 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    # extraPackages = with pkgs; [
+    #   rocm-opencl-icd
+    #   rocm-opencl-runtime
+    # ];
   };
+
+  hardware.amdgpu.opencl.enable = true;
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -16,8 +22,8 @@
     open = true;              # kernel module open-source, recomendado para RTX 50-series (Blackwell)
     nvidiaSettings = true;
     nvidiaPersistenced = true;
-    # package = config.boot.kernelPackages.nvidiaPackages.latest;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
       offload = {
@@ -33,7 +39,7 @@
     options nvidia NVreg_PreserveVideoMemoryAllocations=1
     '';
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  # boot.initrd.kernelModules = [ "amdgpu" ];
 
   # services.asusd = {
   #   enable = true;

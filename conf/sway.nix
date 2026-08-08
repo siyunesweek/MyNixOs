@@ -188,6 +188,7 @@ in
 
     bindsym $mod+Shift+minus move scratchpad
     bindsym $mod+minus scratchpad show
+    bindsym Mod1+F6 exec flameshot gui
 
     mode "resize" {
         bindsym $left resize shrink width 10px
@@ -201,8 +202,8 @@ in
     bindsym Mod4+y mode "resize"
 
     ### Media and brightness
-    bindsym XF86MonBrightnessDown exec brillo -q -u 150000 -U 5; exec pkill -USR1 -f sway-status
-    bindsym XF86MonBrightnessUp exec brillo -q -u 150000 -A 5; exec pkill -USR1 -f sway-status
+    bindsym XF86MonBrightnessDown exec brillo -q -u 150000 -U 1; exec pkill -USR1 -f sway-status
+    bindsym XF86MonBrightnessUp exec brillo -q -u 150000 -A 1; exec pkill -USR1 -f sway-status
     bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; exec pkill -USR1 -f sway-status
     bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; exec pkill -USR1 -f sway-status
     bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; exec pkill -USR1 -f sway-status
