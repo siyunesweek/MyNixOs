@@ -29,6 +29,13 @@ in
 
     #chat
     telegram-desktop
+    (signal-desktop.overrideAttrs (oldAttrs: {
+      preFixup = (oldAttrs.preFixup or "") + ''
+        gappsWrapperArgs+=(--add-flags "--password-store=gnome-libsecret")
+      '';
+    }))
+    discord
+
 
     # editors
     neovim
@@ -37,6 +44,8 @@ in
     wireguard-tools
     git
     kitty
+
+    openrazer-daemon
 
     # Sway
     wl-clipboard

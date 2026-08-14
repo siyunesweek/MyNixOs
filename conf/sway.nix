@@ -127,6 +127,9 @@ in
     exec dbus-update-activation-environment --all
     exec vicinae server
     exec noctalia
+    exec dbus-update-activation-environment --systemd --all
+    exec_always gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+
 
     ### Keybindings
     bindsym $mod+Return exec $term
@@ -144,7 +147,6 @@ in
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
-
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up

@@ -13,8 +13,8 @@
   '';
 
   # Autologin
-  services.getty.autologinUser = "agamotto";
-  services.getty.autologinOnce = true;
+  # services.getty.autologinUser = "agamotto";
+  # services.getty.autologinOnce = true;
 
   # Reglas udev: alias de GPU + permisos de backlight
   services.udev.extraRules = ''
