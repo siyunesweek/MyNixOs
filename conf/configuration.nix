@@ -22,6 +22,9 @@
       # Sway
       ./sway.nix
       ./sconfig.nix
+
+      # Fcitx5
+      ./fcitx5.nix
     ];
 
   # This value determines the NixOS release from which the default

@@ -129,6 +129,7 @@ in
     exec noctalia
     exec dbus-update-activation-environment --systemd --all
     exec_always gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+    exec fcitx5 -d
 
 
     ### Keybindings
