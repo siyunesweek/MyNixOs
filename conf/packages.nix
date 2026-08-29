@@ -1,7 +1,5 @@
-  { config, pkgs, handy, ... }:
-let
-  unstable = import <nixos-unstable> { config = config.nixpkgs.config; };
-in
+  { config, pkgs, handy, noctalia, ... }:
+
 {
   # Install brillo
   hardware.brillo.enable = true;
@@ -29,6 +27,7 @@ in
     flameshot
 
     handy.packages.x86_64-linux.handy
+    noctalia.packages.x86_64-linux.default
 
     btop
 
@@ -68,8 +67,6 @@ in
     pciutils
     vicinae
 
-  ] ++ [
-    unstable.noctalia
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -6,12 +6,15 @@
 
     handy.url = "github:cjpais/Handy";
     handy.inputs.nixpkgs.follows = "nixpkgs";
+
+    noctalia.url = "github:noctalia-dev/noctalia-shell";
+    noctalia.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, handy, ... }: {
+  outputs = { self, nixpkgs, handy, noctalia, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit handy; };
+      specialArgs = { inherit handy noctalia; };
       modules = [
         ./configuration.nix
       ];
