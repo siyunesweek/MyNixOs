@@ -4,7 +4,7 @@
     users.users.agamotto = {
     isNormalUser = true;
     description = "agamotto";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [];
     };
 }

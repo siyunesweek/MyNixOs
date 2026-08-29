@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+  { config, pkgs, handy, ... }:
 let
   unstable = import <nixos-unstable> { config = config.nixpkgs.config; };
 in
@@ -20,32 +20,42 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    # Browsers
+    microsoft-edge
+
     # file manager
     nautilus
 
     flameshot
 
+    handy.packages.x86_64-linux.handy
+
     btop
 
     #chat
     telegram-desktop
-    (signal-desktop.overrideAttrs (oldAttrs: {
-      preFixup = (oldAttrs.preFixup or "") + ''
-        gappsWrapperArgs+=(--add-flags "--password-store=gnome-libsecret")
-      '';
-    }))
+    # (signal-desktop.overrideAttrs (oldAttrs: {
+    #   preFixup = (oldAttrs.preFixup or "") + ''
+    #     gappsWrapperArgs+=(--add-flags "--password-store=gnome-libsecret")
+    #   '';
+    # }))
+    signal-desktop
     discord
 
 
     # editors
     neovim
     helix
+    vscode
+    jetbrains.idea
 
     wireguard-tools
     git
     kitty
 
     openrazer-daemon
+
+    ouch
 
     # Sway
     wl-clipboard

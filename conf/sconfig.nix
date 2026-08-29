@@ -25,7 +25,6 @@
   '';
 
   hardware.brillo.enable = true;
-  users.users.agamotto.extraGroups = [ "video" ];
 
   services.libinput.enable = true;
   services.printing.enable = true;

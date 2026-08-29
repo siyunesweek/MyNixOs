@@ -17,7 +17,7 @@
       # NVIDIA
       ./nvidia.nix
 
-      ./editors.nix
+      ./configs.nix
 
       # Sway
       ./sway.nix
@@ -25,7 +25,14 @@
 
       # Fcitx5
       ./fcitx5.nix
+
+      # ./autofirma.nix
+      ./desktops.nix
+      ./neovim.nix
+
     ];
+
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
