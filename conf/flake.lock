@@ -5,8 +5,7 @@
         "flake-parts": "flake-parts",
         "import-tree": "import-tree",
         "nixpkgs": [
-          "handy",
-          "nixpkgs"
+          "nixpkgs-darwin"
         ],
         "systems": "systems",
         "treefmt-nix": "treefmt-nix"
@@ -47,9 +46,7 @@
     "handy": {
       "inputs": {
         "bun2nix": "bun2nix",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1787644872,
@@ -96,6 +93,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-darwin": {
+      "locked": {
+        "lastModified": 1768649915,
+        "narHash": "sha256-jc21hKogFnxU7KXSVTRmxC7u5D4RHwm9BAvDf5/Z1Uo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3e3f3c7f9977dc123c23ee21e8085ed63daf8c37",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-25.05-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1769909678,
@@ -114,6 +127,22 @@
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1787736819,
+        "narHash": "sha256-cV5xEJJK3BvhU8rEd4mC9UsmDi5qscv/kzGPhBRC5WA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9fbb54b33e91ee4ca368e35a78e0613c720600b3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1787736819,
         "narHash": "sha256-IkjmqLoWzeqBAi1VIkdhDLMGjQDJ4suEDp59Zwxpswg=",
         "rev": "9fbb54b33e91ee4ca368e35a78e0613c720600b3",
         "type": "tarball",
@@ -126,7 +155,7 @@
     },
     "noctalia": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1787962868,
@@ -145,7 +174,8 @@
     "root": {
       "inputs": {
         "handy": "handy",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
+        "nixpkgs-darwin": "nixpkgs-darwin",
         "noctalia": "noctalia"
       }
     },
