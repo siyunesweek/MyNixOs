@@ -30,6 +30,9 @@
       ./desktops.nix
       ./neovim.nix
 
+      #vpn
+      ./tailscale.nix
+
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];

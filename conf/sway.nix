@@ -85,6 +85,7 @@
     exec dbus-update-activation-environment --systemd --all
     exec_always gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
     exec fcitx5 -d
+    exec handy
 
 
     ### Keybindings
@@ -92,7 +93,7 @@
     bindsym $mod+r exec $menu
     bindsym $mod+q kill
     bindsym $mod+Shift+c reload
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
+    bindsym $mod+Control+m exec swaymsg exit
     floating_modifier $mod normal
     tiling_drag enable
 
@@ -152,10 +153,11 @@
 
     bindsym $mod+Shift+minus move scratchpad
     bindsym $mod+minus scratchpad show
-    bindsym Mod1+F6 exec flameshot gui
+    bindsym Mod1+F6 exec grim -g "$(slurp)" - | swappy -f -
 
     bindsym $mod+f exec $file
     bindsym $mod+b exec $browser
+    bindsym $mod+comma exec pkill -USR2 -n handy
 
 
     mode "resize" {

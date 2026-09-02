@@ -25,11 +25,17 @@
     nautilus
 
     flameshot
+    vlc
 
     handy.packages.x86_64-linux.handy
     noctalia.packages.x86_64-linux.default
 
     btop
+    tailscale
+
+    #Handy
+    wtype
+    claude-code
 
     #chat
     telegram-desktop
@@ -61,6 +67,7 @@
     grim
     slurp
     sway-contrib.grimshot
+    swappy
     playerctl
     pavucontrol
     mako
