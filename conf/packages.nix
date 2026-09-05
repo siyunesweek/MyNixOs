@@ -17,6 +17,19 @@
     remotePlay.openFirewall = true;
   };
 
+  # Android studio
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    zlib
+    stdenv.cc.cc.lib
+    glib
+    libGL
+    freetype
+    fontconfig
+    ncurses5
+    pipewire
+  ];
+
   environment.systemPackages = with pkgs; [
     # Browsers
     microsoft-edge
@@ -53,6 +66,12 @@
     helix
     vscode
     jetbrains.idea
+
+    # Kotlin
+    android-studio
+    jdk21
+    android-tools
+    kotlin
 
     wireguard-tools
     git
