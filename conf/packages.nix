@@ -65,6 +65,8 @@
     signal-desktop
     discord
 
+    thunderbird
+
 
     # editors
     neovim
