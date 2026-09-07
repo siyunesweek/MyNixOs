@@ -34,6 +34,11 @@
     # Browsers
     microsoft-edge
 
+
+    python3
+    python3Packages.dbus-python
+    networkmanagerapplet
+
     # file manager
     nautilus
 
@@ -66,6 +71,7 @@
     helix
     vscode
     jetbrains.idea
+    siyuan
 
     # Kotlin
     android-studio
