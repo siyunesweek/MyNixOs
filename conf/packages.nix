@@ -57,11 +57,6 @@
 
     #chat
     telegram-desktop
-    # (signal-desktop.overrideAttrs (oldAttrs: {
-    #   preFixup = (oldAttrs.preFixup or "") + ''
-    #     gappsWrapperArgs+=(--add-flags "--password-store=gnome-libsecret")
-    #   '';
-    # }))
     signal-desktop
     discord
 
@@ -74,10 +69,12 @@
     vscode
     jetbrains.idea
     siyuan
+    libreoffice
 
     # Kotlin
     android-studio
     jdk21
+    jdk17
     android-tools
     kotlin
 
@@ -85,9 +82,8 @@
     git
     kitty
 
-    openrazer-daemon
-
     ouch
+    papers
 
     # Sway
     wl-clipboard
@@ -100,6 +96,12 @@
     mako
     pciutils
     vicinae
+    
+    # Node
+    nodejs
+    pnpm
+
+    kdePackages.okular
 
   ];
 

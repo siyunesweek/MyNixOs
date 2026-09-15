@@ -13,6 +13,7 @@
       ./network.nix
       ./packages.nix
       ./bluetooth.nix
+      ./bash.nix
 
       # NVIDIA
       ./nvidia.nix
