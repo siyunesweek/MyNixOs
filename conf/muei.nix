@@ -11,4 +11,8 @@
     package = pkgs.elasticsearch7;
   };
 
+  environment.systemPackages = [
+    pkgs.python314Packages.scrapy
+  ];
+
 }
