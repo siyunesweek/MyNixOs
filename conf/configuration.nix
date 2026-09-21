@@ -34,6 +34,7 @@
       #vpn
       ./tailscale.nix
 
+      ./niri.nix
       ./muei.nix
 
     ];

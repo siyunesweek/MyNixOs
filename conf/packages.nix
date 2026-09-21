@@ -31,6 +31,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+
     # Browsers
     microsoft-edge
 
