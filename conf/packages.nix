@@ -1,4 +1,4 @@
-  { config, pkgs, handy, noctalia, ... }:
+  { config, pkgs, lib, ... }:
 
 {
   # Install brillo
@@ -46,8 +46,8 @@
     flameshot
     vlc
 
-    handy.packages.x86_64-linux.handy
-    noctalia.packages.x86_64-linux.default
+    handy
+    noctalia
 
     btop
     tailscale
@@ -75,7 +75,7 @@
     # Kotlin
     android-studio
     jdk21
-    jdk17
+    (lib.lowPrio jdk17)
     android-tools
     kotlin
 
@@ -103,6 +103,8 @@
     pnpm
 
     kdePackages.okular
+
+    fastfetch
 
 
   ];
