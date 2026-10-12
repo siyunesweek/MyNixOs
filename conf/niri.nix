@@ -29,13 +29,13 @@
     ///////////////////////////////////////////////////////////////
     output "HDMI-A-1" {
         mode "2560x1440@143.991"
-        scale 0.5
+        scale 0.75
         position x=0 y=0
     }
 
     output "Samsung Display Corp. ATNA40CU05-0 Unknown" {
         mode "2880x1800@120.000"
-        scale 1.5
+        scale 1
         position x=2560 y=0
         variable-refresh-rate
     }

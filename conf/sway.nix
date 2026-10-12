@@ -40,12 +40,18 @@
         scale 1.5
         position 2560,0
         adaptive_sync on
-    }
-    
+        }
 
-    # Workspace 1 = "principal": vive en el externo si está conectado,
-    # si no, cae de vuelta al panel interno (mismo identificador estable).
-    workspace 1 output "HDMI-A-1" "Samsung Display Corp. ATNA40CU05-0
+
+    # Workspace 1-7 = "principal": viven en el externo si está conectado,
+    # si no, caen de vuelta al panel interno (mismo identificador estable).
+    workspace 1 output "HDMI-A-1" "Samsung Display Corp. ATNA40CU05-0  Unknown"
+    workspace 2 output "HDMI-A-1" "Samsung Display Corp. ATNA40CU05-0  Unknown"
+    workspace 3 output "HDMI-A-1" "Samsung Display Corp. ATNA40CU05-0  Unknown"
+    workspace 4 output "HDMI-A-1" "Samsung Display Corp. ATNA40CU05-0  Unknown"
+    workspace 5 output "HDMI-A-1" "Samsung Display Corp. ATNA40CU05-0  Unknown"
+    workspace 6 output "HDMI-A-1" "Samsung Display Corp. ATNA40CU05-0  Unknown"
+    workspace 7 output "HDMI-A-1" "Samsung Display Corp. ATNA40CU05-0  Unknown" 
     
     seat "*" xcursor_theme Adwaita 24
 
@@ -72,7 +78,11 @@
     titlebar_separator disable
     scratchpad_minimize enable
 
-    # animation_duration_ms 200
+    ### Animations (SwayFX)
+    # This SwayFX build (0.6) only exposes this one animation knob: it
+    # animates windows opening/closing (0 = off, up to 5000ms). There's
+    # no separate curve/workspace-switch/move setting in this version.
+    animation_duration_ms 350
 
     layer_effects "notifications" blur enable; shadows enable; corner_radius 10
     layer_effects "panel" blur enable; corner_radius 8
@@ -153,7 +163,7 @@
 
     bindsym $mod+Shift+minus move scratchpad
     bindsym $mod+minus scratchpad show
-    bindsym Mod1+F6 exec grim -g "$(slurp)" - | swappy -f -
+    bindsym Mod1+F6 exec flameshot gui
 
     bindsym $mod+f exec $file
     bindsym $mod+b exec $browser
@@ -172,13 +182,17 @@
     bindsym Mod4+y mode "resize"
 
     ### Media and brightness
-    bindsym XF86MonBrightnessDown exec brillo -q -u 150000 -U 1; exec pkill -USR1 -f sway-status
-    bindsym XF86MonBrightnessUp exec brillo -q -u 150000 -A 1; exec pkill -USR1 -f sway-status
+    bindsym XF86MonBrightnessDown exec brillo -q -u 150000 -U 5; exec pkill -USR1 -f sway-status
+    bindsym XF86MonBrightnessUp exec brillo -q -u 150000 -A 5; exec pkill -USR1 -f sway-status
     bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; exec pkill -USR1 -f sway-status
     bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; exec pkill -USR1 -f sway-status
     bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; exec pkill -USR1 -f sway-status
     bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle; exec pkill -USR1 -f sway-status
     bindsym Print exec grimshot copy area
+
+    ### Gestos del touchpad
+  bindgesture swipe:3:left  workspace next_on_output
+  bindgesture swipe:3:right workspace prev_on_output
 
   '';
 

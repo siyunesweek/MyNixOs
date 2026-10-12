@@ -35,6 +35,7 @@
       ./tailscale.nix
 
       ./niri.nix
+      ./river.nix
       ./muei.nix
 
     ];

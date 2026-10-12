@@ -60,6 +60,7 @@
     telegram-desktop
     signal-desktop
     discord
+    whatsapp-electron
 
     thunderbird
 
@@ -106,6 +107,7 @@
 
     fastfetch
 
+    wget
 
   ];
 
