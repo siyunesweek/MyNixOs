@@ -1,6 +1,8 @@
 { config, pkgs, ...}:
 
 {
+
+  services.supergfxd.enable = true;
   # Drivers gráficos
   services.xserver.videoDrivers = [ "nvidia" ];
 

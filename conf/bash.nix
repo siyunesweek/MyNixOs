@@ -75,6 +75,7 @@
       bind 'set show-all-if-ambiguous on'
 
       alias r="~/scripts/music.sh"
+      alias nv="nvim"
     '';
   };
 }

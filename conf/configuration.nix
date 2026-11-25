@@ -22,7 +22,10 @@
 
       # Sway
       ./sway.nix
-      ./sconfig.nix
+      # ./sconfig.nix
+
+      # KDE Plasma
+      ./kde.nix
 
       # Fcitx5
       ./fcitx5.nix
@@ -35,9 +38,8 @@
       ./tailscale.nix
 
       ./niri.nix
-      ./river.nix
+      # ./river.nix
       ./muei.nix
-
     ];
 
     nix.settings.experimental-features = [ "nix-command" ];

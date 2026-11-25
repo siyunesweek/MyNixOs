@@ -15,4 +15,9 @@
     pkgs.python314Packages.scrapy
   ];
 
+  virtualisation.virtualbox.host.enable = true;
+
+  users.users.agamotto.extraGroups = ["vboxusers" ];
+
+
 }

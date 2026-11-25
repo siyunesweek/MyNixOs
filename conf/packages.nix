@@ -39,6 +39,8 @@
     python3
     python3Packages.dbus-python
     networkmanagerapplet
+    docker
+    just
 
     # file manager
     nautilus
@@ -47,7 +49,8 @@
     vlc
 
     handy
-    noctalia
+    # noctalia
+    gh
 
     btop
     tailscale
@@ -58,9 +61,15 @@
 
     #chat
     telegram-desktop
-    signal-desktop
+    # Forzamos gnome-libsecret: no usamos KWallet (ver kde.nix), y sin esto
+    # Electron intenta activar kwalletd6 por D-Bus y falla con errores en consola.
+    (signal-desktop.overrideAttrs (old: {
+      postFixup = (old.postFixup or "") + ''
+        wrapProgram $out/bin/signal-desktop --add-flags "--password-store=gnome-libsecret"
+      '';
+    }))
     discord
-    whatsapp-electron
+    wechat
 
     thunderbird
 
@@ -108,6 +117,8 @@
     fastfetch
 
     wget
+
+    spark
 
   ];
 
